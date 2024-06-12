@@ -1,0 +1,406 @@
+---
+pagetitle: GJU Slides
+format: 
+  revealjs:
+    theme: [default, style.scss]
+    slide-number: true
+    logo: images/logo.png
+    incremental: true
+    code-copy: true
+    code-link: true #using downlit pkg
+    code-line-numbers: false
+    transition: convex
+    background-transition: convex
+    progress: false
+    controls: true
+    touch: true
+    menu: true
+code-copy: hover
+knitr:
+  opts_chunk: 
+    echo: true
+    #fig.retina: 3
+---
+
+# [DATA ANALYSIS<br>USING {{< fa brands r-project >}}]{.r-fit-text .left} {background-image="https://images.unsplash.com/photo-1493606278519-11aa9f86e40a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" background-size="cover"}
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+[Dr. AJAY KUMAR KOLI, PHD <br> MMTTC COURSE, GJUST, HISAR <br> 12 JUNE 2024. Photo by [Isaac](https://unsplash.com/@isaacbenhesed)]{.r-fit-text .left .small}
+:::
+
+::: {.column width="60%"}
+:::
+::::
+
+#
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3lrNG9wNmh2bzhreTJzejJ0bG50NGU4NXl0NGJyaDc5djN1emhmdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOrwpPFzqDh48XEek/giphy.webp)
+
+## 
+
+[Hello Everyone!!]{.theme-cursive .r-fit-text}
+
+:::: {.columns}
+
+::: {.column width="35%"}
+
+![](images/ajay.png)
+:::
+
+::: {.column width="65%"}
+
+<br>
+
+[{{< fa circle-user >}}]{.coffee} [Dr. Ajay Kumar Koli](https://koliajay.netlify.app/) 
+
+[{{< fa award >}}]{.coffee} Founder & Executive Director
+
+[{{< fa globe >}}]{.coffee} [SARA Institute of Data Science](https://sara-edu.netlify.app/)
+
+[{{< fa brands twitter >}}]{.coffee} [@sara_institute](https://twitter.com/sara_institute)
+
+[{{< fa brands github >}}]{.coffee} [Slide source code](https://github.com/sara-edu/workshop-gju)
+
+```{=html}
+<a class="github-button" href="https://github.com/sara-edu/workshop-gju" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this course on Github">Star this Slide on Github</a><script async defer src="https://buttons.github.io/buttons.js"></script>
+```
+:::
+
+::::
+
+## Data Science Process {.center}
+
+<br>
+
+![](https://r4ds.hadley.nz/diagrams/data-science/base.png)
+
+<br>
+
+::: aside
+[Source: [R for Data Science, 2e](https://r4ds.hadley.nz/intro)]{.small}
+:::
+
+## Guidelines for writing codes:
+
+1. "A" and "a" are not same; avoid CAPS as much as possible
+
+1. Watch space
+    - 2+4+Y-6 ❌
+    - 2 + 4 + Y - 6 ✅
+
+1. Do not leave space when write file name 
+    - "workshop gju r" ❌
+    - "workshop_gju_r" ✅
+
+# [Setting Up the Environment]{.white} {.inverse}
+
+[R, RStudio, Packages, & Quarto]{.small .green}
+
+## R Programming Language
+
+<br>
+
+::: columns
+::: {.column width="30%"}
+<br>
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1920px-R_logo.svg.png)
+:::
+
+::: {.column width="70%"}
+<br>
+
+> "R is a free software environment for statistical computing and graphics."
+
+:::
+:::
+
+::: aside
+[Download [R](https://cloud.r-project.org/)]{.small}
+:::
+
+## RStudio from *posit*
+
+<br>
+
+::: columns
+::: {.column width="30%"}
+<br> 
+![](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png) 
+:::
+
+::: {.column width="70%"}
+<br> 
+
+> RStudio is an integrated development environment (IDE) for R and Python.
+:::
+:::
+
+::: aside
+[Download [RStudio](https://posit.co/download/rstudio-desktop/)]{.small}
+:::
+
+## {.center}
+
+::: columns
+::: {.column width="45%"}
+
+[{{< fa brands r-project >}} as engine]{.r-fit-text}
+
+<br>
+
+[{{< fa gear size=7x >}}]{.green}
+:::
+
+::: {.column width="10%"}
+<br>
+<br>
+<br>
+<br>
+[+]{.r-fit-text}
+:::
+
+::: {.column width="45%"}
+[RStudio as car]{.r-fit-text} 
+
+<br>
+
+[{{< fa car size=7x >}}]{.green}
+:::
+:::
+
+## Quarto 
+
+> "An open-source scientific and technical publishing system"
+
+![](images/quarto_workflow.png)
+
+::: aside
+[Source: [Quarto website](https://quarto.org/)]{.small}
+:::
+
+## Quarto Components:
+
+1. YAML
+
+1. Text
+
+1. Code chunk/group
+
+##  {background-image="images/dynamic-content1.png" background-size="contain" background-position="center" background-transition="fade"}
+
+##  {background-image="images/dynamic-content2.png" background-size="contain" background-position="center" background-transition="fade"}
+
+##  {background-image="images/dynamic-content3.png" background-size="contain" background-position="center" background-transition="fade"}
+
+##  {background-image="images/yaml_quarto.png" background-size="cover" background-position="center"}
+
+##  {background-image="images/text_quarto.png" background-size="cover" background-position="center"}
+
+##  {background-image="images/code_quarto.png" background-size="cover" background-position="center"}
+
+##  {background-image="images/render_quarto.png" background-size="cover" background-position="center"}
+
+## Quarto Demo {.demo}
+
+1. In YAML:
+
+    - document title, author, date
+
+1. In text:
+
+    - headings
+    - plain text
+    
+1. In Code Chunk:
+
+    - add code chunk
+    - comment
+    - Install & call packages
+
+## R Packages {background-image="https://miro.medium.com/v2/resize:fit:732/1*qVn_OyvyHA6AG2gaQkTXfA.png" background-size="50%" background-position="right"}
+
+<br>
+
+::: columns
+::: {.column width="60%"}
+
+> "An R package is a collection of functions, data, and documentation that extends the capabilities of base R. Using packages is key to the successful use of R."
+
+:::
+
+::: {.column width="40%"}
+
+:::
+:::
+
+::: aside
+[[Source: R for Data Science, 2e](https://r4ds.hadley.nz/intro)]{.small}
+:::
+
+## Metacran
+
+![](images/metacran.png)
+
+::: aside
+[[Metacran](https://www.r-pkg.org/)]{.small}
+:::
+
+## Data Importing
+
+- Read Data into R: Use functions like `read_csv()`, `read.csv()`, `read.table()`, `read_excel()`.
+
+- Import data from your computer
+
+```{r}
+#| eval: false
+penguins_data <- read_csv("datafile.csv")
+
+penguins_data
+```
+
+## Data Importing {.demo}
+
+- Install `palmerpenguins` package, 
+
+- call it using the function `library()`, and
+
+- show data set `penguins` using function `glimpse()`.
+
+- import data from the computer
+
+## Data Cleaning
+
+- Handle Missing Values: Use functions like `is.na()`, `na.omit()`, or `mutate()` to deal with NA values.
+
+- Data Transformation: Use `mutate()`, `select()`, `filter()`, `arrange()` from `dplyr` for transforming and cleaning data.
+
+## Data Cleaning {.demo}
+
+- Remove missing values in data `penguins` and save it as a new data set.
+
+- Change the penguin variable `body_mass_g` units from gm to kg and change its place.
+
+- Summary tables using `dplyr`.
+
+## Rectangular Data
+
+::: columns
+
+::: {.column width="35%"}
+![](images/tidy-var.png)
+:::
+
+::: {.column width="30%"}
+![](images/tidy-obs.png)
+:::
+
+::: {.column width="35%"}
+![](images/tidy-value.png)
+:::
+
+:::
+
+# [Exploratory Data Analysis (EDA)]{.white} {.inverse}
+
+[Summary statistics & Data visualization]{.small .green}
+
+## Summary Statistics: 
+
+- Measures of central tendency, measures of dispersion, and correlation.
+
+- Use `summary()`, `mean()`, `sd()`, `min()`, `max()` to get an overview of the data.
+
+## Summary Statistics {.demo}
+
+1. Summary of `penguins` data using `summary()` & `str()`.
+
+1. Calculate average bill length in the penguins and how much variation in the bill length.
+
+1. Relationship between the bill length and mass of penguins.
+
+1. Benefits of inline coding.
+
+1. Summary stats using `skimr` package.
+
+## Data Visualization
+<br>
+
+```{r}
+#| eval: false
+ggplot(data, 
+       aes(x = column1, y = column2)) + 
+  geom_point()
+```
+
+- Use `ggplot2` for creating plots to visualize the data.
+
+# [Data Modeling]{.white} {.inverse}
+
+[Fit models, Model validation, & Interpretation]{.small .green}
+
+## Data Modeling
+
+<br>
+
+```{r}
+#| eval: false
+#| 
+model <- lm(dependent ~ independent,
+            data = data)
+
+summary(model)
+```
+
+
+- Select and Fit Models: Use functions like `lm()`, `glm()`, `nls()`, or packages like `caret` for machine learning models.
+
+## Data Modeling {.demo}
+
+1. Run ANOVA 
+
+1. Fit a regression model to the bill variables.
+
+1. Change independent variable with the mass variable.
+
+##  {.center}
+
+[🧑🏽‍💻👨🏽‍💻<br>Question & Answer]{.r-fit-text}
+
+# [DATA <br> VISUALIZATION<br>]{.r-fit-text .theme-tech}  {#sec-viz background-image="images/viz.jpg" background-size="cover"}
+
+<br>
+<br>
+<br>
+<br>
+
+::: aside
+
+[Background image by [Jess Bailey](https://unsplash.com/@jessbaileydesigns)]{.small}
+
+:::
+
+{{< include viz.qmd >}}
+
+# {background-image="https://images.unsplash.com/photo-1518655048521-f130df041f66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" background-size="cover"}
+
+:::: {.columns}
+
+::: {.column width="70%"}
+[Thank<br>You]{.r-fit-text .theme-cursive .theme-navy-blue .left}
+:::
+
+::: {.column width="30%"}
+
+:::
+
+::::
+
+::: aside
+[Background image by [Leone Venter](https://unsplash.com/@fempreneurstyledstock)]{.small}
+:::
