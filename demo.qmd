@@ -1,176 +1,176 @@
 ---
 title: "Hello World"
-#subtitle: "Data science workshop at GJU"
-#author: "Dr. Ajay Koli"
-#date: today
+subtitle: "Data science workshop at GJU"
+author: "Dr. Ajay Koli"
+date: today
 format: html
-#number-sections: true
-#toc: true
-#execute: 
-#  echo: true
-#  warning: false
-# bibliography: references.bib
+number-sections: true
+toc: true
+execute: 
+  echo: true
+  warning: false
+bibliography: references.bib
 ---
 
-<!-- ## Install packages -->
+## Install packages
 
-<!-- ```{r} -->
-<!-- #install.packages("tidyverse") -->
-<!-- library(tidyverse) -->
-<!-- ``` -->
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+```
 
-<!-- ## Data importing -->
+## Data importing
 
-<!-- ### Import data from a package -->
+### Import data from a package
 
-<!-- ```{r} -->
-<!-- library(palmerpenguins) -->
+```{r}
+library(palmerpenguins)
 
-<!-- penguins -->
-<!-- ``` -->
+penguins
+```
 
-<!-- ### Import data from your computer -->
+### Import data from your computer
 
-<!-- ```{r} -->
-<!-- penguins_data <- read_csv("datafile.csv") -->
+```{r}
+penguins_data <- read_csv("datafile.csv")
 
-<!-- penguins_data -->
-<!-- ``` -->
+penguins_data
+```
 
-<!-- ## Data Cleaning -->
+## Data Cleaning
 
-<!-- ### Handling missing values -->
+### Handling missing values
 
-<!-- ```{r} -->
-<!-- na.omit(penguins_data) -->
-<!-- ``` -->
+```{r}
+na.omit(penguins_data)
+```
 
-<!-- ### Data transformation -->
+### Data transformation
 
-<!-- ```{r} -->
-<!-- penguins_data |>  -->
-<!--   mutate(boday_mass_kg = body_mass_g/1000, -->
-<!--          .after = "species") -->
-<!-- ``` -->
+```{r}
+penguins_data |>
+  mutate(boday_mass_kg = body_mass_g/1000,
+         .after = "species")
+```
 
-<!-- Summary tables -->
+Summary tables
 
-<!-- ```{r} -->
-<!-- summary <- penguins_data |>  -->
-<!--   group_by(species) |>  -->
-<!--   summarize(mean=mean(body_mass_g, na.rm=TRUE), -->
-<!--             std_dev=sd(body_mass_g, na.rm=TRUE)) -->
-<!-- summary |>  -->
-<!--   kableExtra::kable() -->
-<!-- ``` -->
+```{r}
+summary <- penguins_data |>
+  group_by(species) |>
+  summarize(mean=mean(body_mass_g, na.rm=TRUE),
+            std_dev=sd(body_mass_g, na.rm=TRUE))
+summary |>
+  kableExtra::kable()
+```
 
-<!-- ```{r} -->
-<!-- summary2 <- na.omit(penguins_data) |>  -->
-<!--   group_by(sex) |>  -->
-<!--   summarize(Mean=mean(body_mass_g), -->
-<!--             SD=sd(body_mass_g)) -->
-<!-- summary2 |>  -->
-<!--   kableExtra::kable() -->
-<!-- ``` -->
+```{r}
+summary2 <- na.omit(penguins_data) |>
+  group_by(sex) |>
+  summarize(Mean=mean(body_mass_g),
+            SD=sd(body_mass_g))
+summary2 |>
+  kableExtra::kable()
+```
 
-<!-- ## Exploratory Data Analysis (EDA) -->
+## Exploratory Data Analysis (EDA)
 
-<!-- ### Summary statistics -->
+### Summary statistics
 
-<!-- ```{r} -->
-<!-- summary(penguins_data) -->
-<!-- ``` -->
+```{r}
+summary(penguins_data)
+```
 
-<!-- ### Mean and standard deviation -->
+### Mean and standard deviation
 
-<!-- ```{r} -->
-<!-- mean(penguins_data$body_mass_g) -->
+```{r}
+mean(penguins_data$body_mass_g)
 
-<!-- mean(penguins_data$body_mass_g, na.rm = T) -->
+mean(penguins_data$body_mass_g, na.rm = T)
 
-<!-- sd(penguins_data$body_mass_g, na.rm = T) -->
-<!-- ``` -->
+sd(penguins_data$body_mass_g, na.rm = T)
+```
 
-<!-- ### In line coding -->
+### In line coding
 
-<!-- The average mass of the penguins is `r round(mean(penguins_data$body_mass_g, na.rm = T), 2)` with `r round(sd(penguins_data$body_mass_g, na.rm = T), 2)` standard deviation. -->
+The average mass of the penguins is `r round(mean(penguins_data$body_mass_g, na.rm = T), 2)` with `r round(sd(penguins_data$body_mass_g, na.rm = T), 2)` standard deviation.
 
-<!-- ### Data Visualization -->
+### Data Visualization
 
-<!-- Bar plot to know the sex of the penguins. -->
+Bar plot to know the sex of the penguins.
 
-<!-- ```{r} -->
-<!-- ggplot(data = penguins_data, -->
-<!--        mapping = aes(sex)) + -->
-<!--   geom_bar() -->
-<!-- ``` -->
+```{r}
+ggplot(data = penguins_data,
+       mapping = aes(sex)) +
+  geom_bar()
+```
 
-<!-- Histogram to see the pattern in the mass of the penguins. -->
+Histogram to see the pattern in the mass of the penguins.
 
-<!-- ```{r} -->
-<!-- ggplot(data = penguins_data, -->
-<!--        mapping = aes(body_mass_g)) + -->
-<!--   geom_histogram(color = "blue", fill = "pink") -->
-<!-- ``` -->
+```{r}
+ggplot(data = penguins_data,
+       mapping = aes(body_mass_g)) +
+  geom_histogram(color = "blue", fill = "pink")
+```
 
-<!-- ### Summary using `skimr` -->
+### Summary using `skimr`
 
-<!-- ```{r} -->
-<!-- library(skimr) -->
+```{r}
+library(skimr)
 
-<!-- skim(penguins_data) -->
-<!-- ``` -->
+skim(penguins_data)
+```
 
-<!-- ## Data Modeling -->
+## Data Modeling
 
-<!-- ### ANOVA -->
+### ANOVA
 
-<!-- ```{r} -->
-<!-- mtcars_aov <- aov(penguins_data$bill_length_mm ~ penguins_data$sex)  -->
+```{r}
+mtcars_aov <- aov(penguins_data$bill_length_mm ~ penguins_data$sex)
 
-<!-- summary(mtcars_aov)  -->
-<!-- ``` -->
+summary(mtcars_aov)
+```
 
-<!-- ### Regression -->
+### Regression
 
-<!-- ```{r} -->
-<!-- model <- lm(bill_length_mm ~ body_mass_g, penguins_data) -->
+```{r}
+model <- lm(bill_length_mm ~ body_mass_g, penguins_data)
 
-<!-- summary(model) -->
-<!-- ``` -->
+summary(model)
+```
 
-<!-- **Regression table** -->
+**Regression table**
 
-<!-- ```{r} -->
-<!-- library(stargazer) -->
+```{r}
+library(stargazer)
 
-<!-- stargazer(model, type = "text") -->
-<!-- ``` -->
+stargazer(model, type = "text")
+```
 
-<!-- Adding more than one independent variables [@koli2021]. -->
+Adding more than one independent variables [@koli2021].
 
-<!-- ```{r} -->
-<!-- model2 <- lm(bill_length_mm ~ body_mass_g, penguins_data) -->
+```{r}
+model2 <- lm(bill_length_mm ~ body_mass_g, penguins_data)
 
-<!-- stargazer(model2, type = "text") -->
-<!-- ``` -->
+stargazer(model2, type = "text")
+```
 
-<!-- ## Write Equations -->
+## Write Equations
 
-<!-- $$ -->
-<!-- E = mc^2 -->
-<!-- $$  -->
-<!-- $$ -->
-<!-- Y = X_1 + X_2 -->
-<!-- $$ -->
+$$
+E = mc^2
+$$
+$$
+Y = X_1 + X_2
+$$
 
-<!-- $a^2 + b^2 = c^2$ -->
+$a^2 + b^2 = c^2$
 
-<!-- $$ -->
-<!-- Pr(\theta | y) = \frac{Pr(y | \theta) Pr(\theta)}{Pr(y)} -->
-<!-- $$ -->
+$$
+Pr(\theta | y) = \frac{Pr(y | \theta) Pr(\theta)}{Pr(y)}
+$$
 
-<!-- $Pr(\theta | y) \propto Pr(y | \theta) Pr(\theta)$ -->
+$Pr(\theta | y) \propto Pr(y | \theta) Pr(\theta)$
 
-<!-- ## References -->
+## References
 
